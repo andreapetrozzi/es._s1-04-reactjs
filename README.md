@@ -73,8 +73,8 @@ will find the comments of a single book.
 
 
 ### Terminal commands
-- `npm i bootstrap@4.6.1";
-- "npm i react-bootstrap@1.6.6".
+- `npm i bootstrap@4.6.1`;
+- "npm i react-bootstrap@1.6.6`.
 
 // Refresh the API
 
