@@ -1,3 +1,89 @@
+### Description 
+We make EpiBooks even better
+
+Start from your previous project, today you will allow users to leave book reviews.
+Remember, every comment posted will be visible to everyone.
+
+### API Docs:
+Do you have a CRUD endpoint for comments on:
+https://striveschool-api.herokuapp.com/api/comments/
+
+This means you can GET, DELETE, POST, PUT data from there.
+
+### IMPORTANT:
+You will need to use Authentication headers
+(get a new token at https://strive.school/studentlogin if the previous one has expired)
+
+The comment is structured as an object in this way:
+
+{
+  "comment": string
+  "rates": string,
+  "elementId": string
+}
+
+Where:
+- comment is the text of the comment entered by the user
+- rate is the value between 1 and 5
+- elementId is the ASIN code of the book
+
+Example:
+{
+  "comment": "A good book but definitely I don't like many parts of the plot"
+  "rates": "3",
+  "elementId": "0316438960"
+}
+
+### WARNING
+Do a GET on https://striveschool-api.herokuapp.com/api/comments/
+will return ALL comments to database.
+
+You'll probably be primarily interested in receiving comments for a single book at a time:
+to do this you will need to specify the elementId/ASIN of the book in your URL:
+https://striveschool-api.herokuapp.com/api/comments/:elementId
+
+Example:
+https://striveschool-api.herokuapp.com/api/comments/0316438960
+will find the comments of a single book.
+
+### TASKS:
+
+1. Add a "CommentArea" component at the end of "SingleBook".
+        When the user clicks on a "SingleBook" (therefore when the selected property becomes true in its state),
+        comments should appear (hint: short-circuit operator!).
+        
+2. "CommentArea" will fetch the reviews for the selected book,
+         and save the comments in your status.
+         It will also contain two sub-components: "CommentsList" and "AddComment".
+         
+3. "CommentsList" will show book reviews in a list;
+         the reviews array will be passed to it as a prop by the CommentArea component.
+         The single review will be displayed using another component, called SingleComment.
+         
+4. "AddComment" will contain a form to add the text of the review and the rating (from 1 to 5).
+         This component will allow the user to POST the new comment on the selected book.
+   
+5. Add a DELETE button next to each comment.
+         Will have to create a request to
+         https://striveschool-api.herokuapp.com/api/comments/:commentId
+         
+6. Create a "Loading" component. This will appear on the page when the request is being processed, but not yet resolved.
+
+7. Create an "Error" component. If something goes wrong with a network request, an error message should appear.
+
+
+### Terminal commands
+- `npm i bootstrap@4.6.1";
+- "npm i react-bootstrap@1.6.6".
+
+// Refresh the API
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
